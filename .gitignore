@@ -155,3 +155,7 @@ cython_debug/
 temp/
 # sqlite
 .sqlite
+
+# C lang files
+*.o
+a.out
