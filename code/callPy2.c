@@ -9,6 +9,7 @@ int main(int argc, char *argv[]) {
 
     // Initialize the Python interpreter
     Py_Initialize();
+    // Add current directory to path (added by self)
     PyObject *sys      = PyImport_ImportModule("sys");
     PyObject *sys_path = PyObject_GetAttrString(sys, "path");
     PyList_Append(sys_path, PyUnicode_DecodeFSDefault("."));
@@ -28,7 +29,7 @@ int main(int argc, char *argv[]) {
         if (pFunc && PyCallable_Check(pFunc)) {
             // Build the argument list
             pArgs = PyTuple_New(2);
-            pValue = PyLong_FromLong(1);
+            pValue = PyUnicode_FromString("C string");
             PyTuple_SetItem(pArgs, 0, pValue);
             pValue = PyLong_FromLong(2);
             PyTuple_SetItem(pArgs, 1, pValue);
