@@ -1,6 +1,7 @@
 // Reference
 // https://tomosoft.jp/design/?p=8818
 // won't work on 3.10.12
+// this code may be created on 2.*
 
 #include <Python.h>
 
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
   PyList_Append(path, PyUnicode_DecodeFSDefault("."));
   PySys_SetArgv(argc, argv);
   PyRun_SimpleString("import os, sys\n");
-  pName = PyString_FromString(argv[1]); //this function maybe 
+  pName = PyString_FromString(argv[1]); //this function maybe
   pModule = PyImport_Import(pName);
   Py_DECREF(pName);
 
