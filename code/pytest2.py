@@ -3,4 +3,4 @@
 
 def hello(a, b):
     print("hello python c")
-    return ("hello\nC\n", a + " and " + str(b))
+    return ("ハロー\nC\n", a + " and " + str(b))
